@@ -9,3 +9,4 @@
 - Jessie X Sun
 - Sanskriti Umesh Tiwari
 - Danish Abdur Rehman Khan
+- Saatwik R Jasti
