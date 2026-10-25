@@ -1,6 +1,6 @@
 # Fall 2026 CS 3354 
 # Team 3
-## Nepal Flash Flood Relief Information Hub Web Page
+## Nepal-Tibet Flash Flood Relief Information Hub
 
 ## Team members
 
