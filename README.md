@@ -2,6 +2,8 @@
 # Team 3
 ## Nepal-Tibet Flash Flood Relief Information Hub
 
+The Nepal-Tibet Flash Flood Relief Information Hub brings flood information, relief updates, supporting organizations, and donation resources together in one place. It helps users find and browse information about affected communities and available relief efforts across Nepal and Tibet.
+
 ## Team members
 
 - Yagnika Choppadandi
