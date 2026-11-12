@@ -1,0 +1,903 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+:root {--bg:#f6f7f2;--ink:#19372d;--muted:#61736b;--brand:#225b46;--accent:#c87a45;--line:#dce3da;--soft:#e9eee6;--font-display:Georgia,"Times New Roman",serif;--font-body:Arial,Helvetica,sans-serif}
+body{line-height:1.6}h1,h2,h3{line-height:1.18}.wrap{max-width:1180px}.brand{font-family:Arial,sans-serif;font-size:17px}.mark{border-radius:50%;width:38px;height:38px;font-size:25px}.bar{padding-block:18px}main{padding-top:24px}.demo-banner{font-size:12px;color:#4f6358;background:#eaf0e5;border:1px solid #dbe5d3;border-radius:6px;padding:10px 14px;display:flex;align-items:center;gap:9px}.status-dot{height:6px;width:6px;border-radius:50%;background:#61826b;flex-shrink:0}.hero-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center;padding:42px 0}.hero{padding:8px 0;gap:20px;max-width:none}.hero h1{font-size:clamp(36px,4.5vw,59px);letter-spacing:-1.7px}.hero .eyebrow{font-size:10px;letter-spacing:1.4px;max-width:440px;margin:0}.lede{font-size:16px;max-width:47ch}.hero-note{font-size:11px;letter-spacing:.3px;color:var(--muted)}.btn{border-radius:5px;padding:11px 17px;font-size:13px}.landscape{position:relative;background:#e0e9e1;border-radius:12px;overflow:hidden;min-height:310px}.landscape svg{display:block;width:100%;height:100%;min-height:310px;object-fit:cover}.landscape-caption{position:absolute;bottom:23px;left:24px;color:#fffaf1;display:grid;gap:6px}.landscape-caption span{font-size:9px;letter-spacing:2px}.landscape-caption strong{font:23px/1.18 Georgia,serif}.quick-links{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line);margin:0 0 48px}.quick-links button{padding:23px 15px;border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:12px;text-align:left;font-size:13px}.quick-links button:last-child{border-right:0}.quick-links button:hover{background:var(--soft)}.quick-links span{font-size:10px;color:var(--muted)}.quick-links b{margin-left:auto;color:var(--brand)}#browse{scroll-margin-top:20px}.browse-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:22px}.browse-head h2{font-size:29px}.browse-head .eyebrow{font-size:10px;margin-bottom:8px}.filters{display:grid;grid-template-columns:2fr 1fr 1.2fr auto;gap:12px;align-items:end;padding:18px;background:#eef1eb;border:1px solid var(--line);border-radius:8px;margin-bottom:24px}.filters .field{margin:0}.filters input,.filters select{background:white}.filters .btn{min-height:44px}.cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{border-radius:8px;padding:22px;gap:12px}.card h3{font:23px/1.2 Georgia,serif}.card p{font-size:13px;line-height:1.7}.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.tag{font-size:9px;letter-spacing:.7px}.tag:before{background:#5f8871;width:5px;height:5px}.sample-badge{font-size:8px;color:#717e73;border:1px solid #dce3da;padding:1px 5px;border-radius:3px}.region-label{font-size:10px;color:#8a674b;letter-spacing:.6px;text-transform:uppercase}.card-bottom{display:grid;gap:6px;margin-top:auto;padding-top:14px;border-top:1px solid #edf0e9}.org-label{font-size:11px;font-weight:bold}.source-placeholder{font-size:10px;color:var(--muted)}.source-link{font-size:12px;font-weight:bold}.meta{font:10px Arial,sans-serif}.notice-note{font-size:11px;color:var(--muted);margin-top:20px;max-width:90ch}.form-note{margin-bottom:18px}.admin-grid{grid-template-columns:minmax(0,400px) minmax(0,1fr)}footer strong{color:var(--ink);font-size:14px}footer p{max-width:90ch;margin-top:8px;font-size:12px}footer .footer-small{font-size:10px}.item{background:#f6f7f2}.empty{grid-column:1/-1}.empty h3{margin-bottom:8px}
+@media(max-width:900px){.hero-layout{gap:24px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.quick-links button{font-size:11px;padding:18px 10px;gap:8px}.filters{grid-template-columns:1fr 1fr}.filters .field:first-child{grid-column:1/-1}.admin-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.hero-layout{grid-template-columns:1fr;padding:28px 0;gap:24px}.hero h1{font-size:42px}.landscape{min-height:0;max-height:240px}.landscape svg{min-height:0;margin-top:-40px}.landscape-caption{bottom:18px}.quick-links{grid-template-columns:1fr 1fr;margin-bottom:32px}.quick-links button:nth-child(2){border-right:0}.quick-links button:nth-child(-n+2){border-bottom:1px solid var(--line)}.cards{grid-template-columns:1fr}.browse-head{align-items:start;flex-direction:column}.browse-head h2{font-size:28px}.filters{padding:12px;gap:10px}.filters .btn{grid-column:1/-1}.brand{font-size:15px}.bar{gap:12px}.hero .eyebrow{font-size:9px}.demo-banner{font-size:10px}.hero-note{font-size:10px}nav a{font-size:12px;padding:6px 8px}.login-wrap h1{font-size:32px}.admin-head h1{font-size:30px}}
+</style></head><body>
+<title>Nepal–Tibet Relief Hub</title>
+
+
+
+<style>
+/* Layout: slim top bar, one centered column. Public landing page, a small login card,
+   an admin dashboard (form left, content list right) and a test-case report table. */
+:root {
+  --bg: #F4F6F2;
+  --surface: #FFFFFF;
+  --ink: #14231C;
+  --muted: #56675E;
+  --line: #D6DDD6;
+  --soft: #E6ECE7;
+  --brand: #154734;
+  --brand-ink: #FFFFFF;
+  --accent: #D96C00;
+  --good: #1B7A43;
+  --good-bg: #DDF1E4;
+  --bad: #B3261E;
+  --bad-bg: #FBE3E0;
+  --tag-announcement: #D96C00;
+  --tag-update: #1B7A43;
+  --tag-event: #3C6E9E;
+  --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1A15;
+    --surface: #16241D;
+    --ink: #E8EEE9;
+    --muted: #9AABA1;
+    --line: #2A3C33;
+    --soft: #1D2F26;
+    --brand: #62C494;
+    --brand-ink: #08120D;
+    --accent: #F2923A;
+    --good: #5FD08E;
+    --good-bg: #153325;
+    --bad: #FF8A80;
+    --bad-bg: #3A1815;
+    --tag-announcement: #F2923A;
+    --tag-update: #5FD08E;
+    --tag-event: #7FB2E0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1A15;
+  --surface: #16241D;
+  --ink: #E8EEE9;
+  --muted: #9AABA1;
+  --line: #2A3C33;
+  --soft: #1D2F26;
+  --brand: #62C494;
+  --brand-ink: #08120D;
+  --accent: #F2923A;
+  --good: #5FD08E;
+  --good-bg: #153325;
+  --bad: #FF8A80;
+  --bad-bg: #3A1815;
+  --tag-announcement: #F2923A;
+  --tag-update: #5FD08E;
+  --tag-event: #7FB2E0;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+}
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--brand); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.topbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+.mark { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 6px; background: var(--brand); color: var(--brand-ink); font-size: 13px; letter-spacing: 0.02em; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+nav a { text-decoration: none; color: var(--muted); font-weight: 500; padding: 8px 10px; border-radius: 6px; border-bottom: 2px solid transparent; }
+nav a:hover { color: var(--ink); background: var(--soft); }
+nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); border-radius: 6px 6px 0 0; }
+
+main { padding-block: 32px 48px; min-height: 60vh; }
+footer { padding-block: 20px 28px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.hero { display: grid; gap: 14px; justify-items: start; padding-block: 12px 36px; max-width: 640px; }
+.hero h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 700; }
+.lede { color: var(--muted); font-size: 17px; max-width: 52ch; }
+.section-title { font-size: 22px; margin-bottom: 16px; display: flex; align-items: baseline; gap: 10px; }
+.count { font-family: var(--font-mono); font-size: 14px; color: var(--muted); font-weight: 400; }
+
+.btn {
+  font: inherit; font-weight: 600; font-size: 14px;
+  min-height: 40px; padding: 8px 16px; border-radius: 6px;
+  border: 1px solid var(--brand); background: var(--brand); color: var(--brand-ink);
+  cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.secondary:hover { background: var(--soft); filter: none; }
+.btn.danger { background: transparent; color: var(--bad); border-color: var(--bad); }
+.btn.danger:hover { background: var(--bad-bg); filter: none; }
+.btn.danger.solid { background: var(--bad); color: var(--surface); }
+.btn.quiet { background: transparent; color: var(--muted); border-color: transparent; }
+.btn.quiet:hover { background: var(--soft); color: var(--ink); filter: none; }
+.btn.small { min-height: 34px; padding: 4px 12px; font-size: 13px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card h3 { font-size: 18px; overflow-wrap: anywhere; }
+.card p { color: var(--muted); overflow-wrap: anywhere; }
+.meta { font-size: 12px; color: var(--muted); font-family: var(--font-mono); margin-top: auto; }
+.tag { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.tag::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--dot, var(--muted)); }
+.tag[data-tag="Announcement"] { --dot: var(--tag-announcement); }
+.tag[data-tag="Update"] { --dot: var(--tag-update); }
+.tag[data-tag="Event"] { --dot: var(--tag-event); }
+.empty { border: 1px dashed var(--line); border-radius: 8px; padding: 28px; color: var(--muted); background: var(--surface); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; min-width: 0; }
+.panel h2 { font-size: 19px; margin-bottom: 14px; }
+.login-wrap { display: grid; gap: 16px; max-width: 420px; margin: 0 auto; }
+.login-wrap h1 { font-size: 30px; }
+.field { display: grid; gap: 6px; margin-bottom: 14px; }
+.field label { font-size: 13px; font-weight: 600; }
+.field input, .field textarea, .field select {
+  font: inherit; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; width: 100%; min-height: 42px;
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.hint { font-size: 13px; color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.demo { background: var(--soft); border-radius: 8px; padding: 14px; display: grid; gap: 8px; font-size: 13px; }
+.demo code { font-family: var(--font-mono); font-size: 13px; }
+.msg { min-height: 22px; font-size: 14px; margin-top: 12px; }
+.msg[data-kind="bad"] { color: var(--bad); }
+.msg[data-kind="good"] { color: var(--good); }
+.msg[data-kind="info"] { color: var(--muted); }
+
+.admin-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 18px; }
+.admin-head h1 { font-size: 30px; }
+.admin-grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 20px; align-items: start; }
+.items { display: grid; gap: 10px; }
+.item { border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: grid; gap: 8px; min-width: 0; background: var(--bg); }
+.item h3 { font-size: 16px; overflow-wrap: anywhere; }
+.item p { color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+.item .row { margin-top: 2px; }
+
+
+
+@media (max-width: 760px) {
+  .admin-grid { grid-template-columns: minmax(0, 1fr); }
+  main { padding-block: 24px 36px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="#home"><span class="mark" aria-hidden="true">↟</span><span>Nepal–Tibet Relief Hub</span></a>
+    <nav id="nav" aria-label="Main"></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="view-home" hidden>
+    <div class="demo-banner"><span class="status-dot"></span> Demonstration website · All entries are sample content, not live relief information.</div>
+    <div class="hero-layout">
+      <div class="hero">
+        <p class="eyebrow">Nepal–Tibet Flash Flood Relief Information Hub</p>
+        <h1>Information that<br>connects communities.</h1>
+        <p class="lede">One place to explore flood background, relief updates, participating organizations, and ways to support affected communities.</p>
+        <div class="row"><a class="btn" href="#browse">Explore the hub <span aria-hidden="true">></span></a><button class="btn secondary" type="button" data-filter="Organization">Find organizations</button></div>
+        <p class="hero-note">Regional information. Clear sources. Community focus.</p>
+      </div>
+      <aside class="landscape" aria-label="Illustration of Himalayan mountains and a river">
+        <svg viewBox="0 0 500 380" role="img" aria-label="Stylized Himalayan landscape" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="380" fill="#e0e9e1"/><circle cx="390" cy="80" r="37" fill="#f1b780"/><path d="M0 265L120 85 235 265 330 115 500 290V380H0Z" fill="#a5b8aa"/><path d="M49 210L120 85 191 202 144 177 122 142 99 183 79 171Z" fill="#f4f7f1"/><path d="M0 330L235 108 438 330Z" fill="#6d8b7c"/><path d="M164 175L235 108 299 180 260 170 240 146 215 173 196 158Z" fill="#fffaf1"/><path d="M0 330L90 275 180 320 330 235 500 320V380H0Z" fill="#345e4e"/><path d="M285 273C210 310 346 310 245 341S190 367 212 380H330C270 356 353 343 309 319S251 300 285 273" fill="#b8d9d9"/></svg>
+        <div class="landscape-caption"><span>NEPAL &amp; TIBET</span><strong>Connecting information.<br>Supporting recovery.</strong></div>
+      </aside>
+    </div>
+    <div class="quick-links" aria-label="Browse by topic">
+      <button type="button" data-filter="Relief update"><span>01</span> Relief updates <b>></b></button>
+      <button type="button" data-filter="Background"><span>02</span> Flood background <b>></b></button>
+      <button type="button" data-filter="Organization"><span>03</span> Organizations <b>></b></button>
+      <button type="button" data-filter="Donation link"><span>04</span> Ways to help <b>></b></button>
+    </div>
+    <section id="browse" aria-labelledby="browse-heading">
+      <div class="browse-head"><div><p class="eyebrow">Explore information</p><h2 id="browse-heading">Community information board</h2></div><span class="count" id="home-count" aria-live="polite"></span></div>
+      <div class="filters">
+        <div class="field"><label for="search">Search the hub</label><input id="search" type="search" placeholder="Search updates, organizations, or topics…"></div>
+        <div class="field"><label for="region">Region</label><select id="region"><option value="">All regions</option><option>Nepal</option><option>Tibet</option><option>Nepal &amp; Tibet</option></select></div>
+        <div class="field"><label for="category">Category</label><select id="category"><option value="">All categories</option><option>Relief update</option><option>Background</option><option>Organization</option><option>Donation link</option><option>Public notice</option></select></div>
+        <button type="button" class="btn secondary" id="clear-filters">Clear</button>
+      </div>
+    <div class="cards" id="cards"></div>
+    <p class="notice-note">Public notices are reserved for publicly confirmed information from an identified source. This demo contains no real missing-person or deceased-person records.</p>
+    </section>
+  </section>
+
+  <section id="view-login" hidden>
+    <div class="login-wrap">
+      <div>
+        <p class="eyebrow">Relief hub · Administration</p>
+        <h1>Admin login</h1><p class="hint">Sign in to manage information published on the relief hub.</p>
+      </div>
+      <form class="panel" id="login-form" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" spellcheck="false">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password">
+        </div>
+        <button class="btn" type="submit" id="login-submit">Sign in</button>
+        <p class="msg" id="login-msg" role="status" aria-live="polite" data-kind="info"></p>
+      </form>
+      <div class="demo">
+        <strong>Demo account for the prototype</strong>
+        <span>Username <code>admin</code> · Password <code>Admin#2026</code></span>
+        <span class="hint">Three wrong attempts lock the account for 30 seconds.</span>
+        <div><button type="button" class="btn secondary small" id="fill-demo">Fill demo credentials</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-admin" hidden>
+    <div class="admin-head">
+      <h1>Admin dashboard</h1>
+      <span class="hint">Signed in as <strong id="who">admin</strong>. Manage the information shown to visitors.</span>
+    </div>
+    <p id="storage-warning" class="demo-banner" role="status" hidden>Browser storage is unavailable. Changes will be lost when this page is reloaded.</p><div class="admin-grid">
+      <form class="panel" id="content-form" novalidate>
+        <h2 id="form-title">Add content</h2><p class="hint form-note">Publish a sample update, organization listing, or resource. All entries in this prototype are labeled as demonstration content.</p>
+        <div class="field">
+          <label for="c-title">Title</label>
+          <input id="c-title" name="title" type="text" autocomplete="off">
+          <span class="hint">Required, up to 80 characters.</span>
+        </div>
+        <div class="field">
+          <label for="c-body">Message</label>
+          <textarea id="c-body" name="body"></textarea>
+          <span class="hint">Required, up to 400 characters.</span>
+        </div>
+        <div class="field">
+          <label for="c-tag">Category</label>
+          <select id="c-tag" name="tag">
+            <option>Relief update</option><option>Background</option><option>Organization</option><option>Donation link</option><option>Public notice</option>
+          </select>
+        </div>
+        <div class="field"><label for="c-region">Region</label><select id="c-region"><option>Nepal</option><option>Tibet</option><option>Nepal &amp; Tibet</option></select></div>
+        <div class="field"><label for="c-org">Organization / source name</label><input id="c-org" type="text" maxlength="100" placeholder="e.g., Sample relief organization"><span class="hint">Required for public notices and donation links.</span></div>
+        <div class="field"><label for="c-source">Source or donation website</label><input id="c-source" type="url" placeholder="https://…"><span class="hint">Optional HTTPS link; required for public notices and donation links. Links are not independently verified by this demo.</span></div>
+        <div class="row">
+          <button class="btn" type="submit" id="form-submit">Add content</button>
+          <button class="btn secondary" type="button" id="form-cancel" hidden>Cancel edit</button>
+        </div>
+        <p class="msg" id="admin-msg" role="status" aria-live="polite" data-kind="info"></p>
+      </form>
+      <div class="panel">
+        <h2>Published hub content <span class="count" id="admin-count"></span></h2>
+        <div class="items" id="items"></div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="wrap"><strong>Nepal–Tibet Relief Hub</strong><p>A demonstration of a centralized flash flood relief information hub. Sample content only; not an emergency service or a source of live alerts. Donations are not processed here.</p><p class="footer-small">Admin changes are stored in this browser only. Demo authentication is not production security.</p></footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var TAGS = ['Relief update', 'Background', 'Organization', 'Donation link', 'Public notice'];
+  var LIMITS = { title: 80, body: 400 };
+  var DEMO = { username: 'admin', password: 'Admin#2026' };
+  var STORAGE_KEY = 'nepal-tibet-relief-demo-v2';
+
+  var SEED = [
+  {
+    "id": 1,
+    "tag": "Relief update",
+    "title": "Community relief distribution update",
+    "body": "Sample bulletin: a participating organization shares an overview of relief supplies and community support. A deployed hub would display the original organization’s dated update here.",
+    "region": "Nepal",
+    "org": "Sample community relief group",
+    "source": "",
+    "updated": null
+  },
+  {
+    "id": 2,
+    "tag": "Background",
+    "title": "Understanding the regional flood context",
+    "body": "Sample background page: this section brings together sourced disaster summaries and regional context for communities affected by flash flooding in Nepal and Tibet.",
+    "region": "Nepal & Tibet",
+    "org": "Sample information team",
+    "source": "",
+    "updated": null
+  },
+  {
+    "id": 3,
+    "tag": "Organization",
+    "title": "Himalayan Community Support — sample listing",
+    "body": "Fictional organization listing demonstrating where visitors can find an organization’s focus, region, and official website. This is not a real relief provider.",
+    "region": "Nepal",
+    "org": "Himalayan Community Support (fictional)",
+    "source": "",
+    "updated": null
+  },
+  {
+    "id": 4,
+    "tag": "Relief update",
+    "title": "Recovery information from local partners",
+    "body": "Sample bulletin: regional partners can publish recovery progress and community resource information. This entry does not describe an actual operation or current conditions.",
+    "region": "Tibet",
+    "org": "Sample regional partner",
+    "source": "",
+    "updated": null
+  },
+  {
+    "id": 5,
+    "tag": "Donation link",
+    "title": "Support through an organization’s official website",
+    "body": "Sample resource: a reviewed external donation link would appear here. No real donation destination is attached to this example, and the hub does not collect payments.",
+    "region": "Nepal & Tibet",
+    "org": "Sample donation resource",
+    "source": "",
+    "updated": null
+  },
+  {
+    "id": 6,
+    "tag": "Public notice",
+    "title": "Publicly confirmed notices belong here",
+    "body": "Sample notice explaining this category. Actual missing-person or deceased-person information would require a publicly confirmed source. No real personal records are included in this demonstration.",
+    "region": "Nepal & Tibet",
+    "org": "Sample public information source",
+    "source": "",
+    "updated": null
+  }
+];
+
+  /* ---------- helpers ---------- */
+
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function copyItem(item) {
+    return { id: item.id, title: item.title, body: item.body, tag: item.tag, updated: item.updated, region: item.region || 'Nepal & Tibet', org: item.org || '', source: item.source || '' };
+  }
+
+  function formatDate(iso) {
+    if (!iso) { return 'Sample content'; }
+    var d = new Date(iso);
+    return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  }
+
+  async function hashPassword(password) {
+    var salted = 'se3354-salt:' + password;
+    try {
+      var buffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(salted));
+      var bytes = Array.from(new Uint8Array(buffer));
+      var hex = '';
+      for (var i = 0; i < bytes.length; i++) {
+        hex += bytes[i].toString(16).padStart(2, '0');
+      }
+      return 'sha256:' + hex;
+    } catch (err) {
+      var h = 2166136261;
+      for (var j = 0; j < salted.length; j++) {
+        h ^= salted.charCodeAt(j);
+        h = Math.imul(h, 16777619) >>> 0;
+      }
+      return 'fnv:' + h.toString(16);
+    }
+  }
+
+  /* ---------- authentication logic ---------- */
+
+  function createAuth(users, options) {
+    var failures = Object.create(null);
+    var sessionUser = null;
+
+    return {
+      login: async function (username, password) {
+        var name = (username || '').trim();
+        if (name === '' || !password) {
+          return { ok: false, code: 'EMPTY_FIELDS', message: 'Enter both a username and a password.' };
+        }
+
+        var record = failures[name] || { count: 0, lockedUntil: 0 };
+        var currentTime = options.now();
+
+        if (record.lockedUntil > currentTime) {
+          var secondsLeft = Math.ceil((record.lockedUntil - currentTime) / 1000);
+          return { ok: false, code: 'LOCKED', message: 'Too many failed attempts. Try again in ' + secondsLeft + ' seconds.' };
+        }
+        if (record.lockedUntil !== 0) {
+          record.count = 0;
+          record.lockedUntil = 0;
+        }
+
+        var hash = await hashPassword(password);
+        var match = null;
+        for (var i = 0; i < users.length; i++) {
+          if (users[i].username === name && users[i].hash === hash) {
+            match = users[i];
+          }
+        }
+
+        if (match !== null) {
+          failures[name] = { count: 0, lockedUntil: 0 };
+          sessionUser = match.username;
+          return { ok: true, code: 'OK', message: 'Signed in.' };
+        }
+
+        record.count = record.count + 1;
+        failures[name] = record;
+
+        if (record.count >= options.maxAttempts) {
+          record.lockedUntil = options.now() + options.lockMs;
+          return { ok: false, code: 'LOCKED', message: 'Too many failed attempts. Locked for ' + (options.lockMs / 1000) + ' seconds.' };
+        }
+
+        var attemptsLeft = options.maxAttempts - record.count;
+        var word = attemptsLeft === 1 ? 'attempt' : 'attempts';
+        return {
+          ok: false,
+          code: 'BAD_CREDENTIALS',
+          message: 'Invalid username or password. ' + attemptsLeft + ' ' + word + ' left before a lock.'
+        };
+      },
+      logout: function () {
+        sessionUser = null;
+      },
+      isAuthed: function () {
+        return sessionUser !== null;
+      },
+      currentUser: function () {
+        return sessionUser;
+      }
+    };
+  }
+
+  function resolveRoute(name, authed) {
+    if (name === 'admin') {
+      if (authed) { return 'admin'; }
+      return 'login';
+    }
+    if (name === 'login') {
+      if (authed) { return 'admin'; }
+      return 'login';
+    }
+
+    return 'home';
+  }
+
+  /* ---------- content logic ---------- */
+
+  function validateContent(fields) {
+    var title = (fields.title || '').trim();
+    var body = (fields.body || '').trim();
+    var tag = fields.tag;
+
+    if (title === '') {
+      return { ok: false, code: 'INVALID', message: 'Title is required.' };
+    }
+    if (title.length > LIMITS.title) {
+      return { ok: false, code: 'INVALID', message: 'Title must be ' + LIMITS.title + ' characters or fewer.' };
+    }
+    if (body === '') {
+      return { ok: false, code: 'INVALID', message: 'Message is required.' };
+    }
+    if (body.length > LIMITS.body) {
+      return { ok: false, code: 'INVALID', message: 'Message must be ' + LIMITS.body + ' characters or fewer.' };
+    }
+    if (TAGS.indexOf(tag) === -1) {
+      return { ok: false, code: 'INVALID', message: 'Choose a valid type.' };
+    }
+    var region = fields.region || 'Nepal & Tibet';
+    var org = (fields.org || '').trim();
+    var source = (fields.source || '').trim();
+    if (['Nepal', 'Tibet', 'Nepal & Tibet'].indexOf(region) === -1) return {ok:false, code:'INVALID', message:'Choose a valid region.'};
+    if (org.length > 100) return {ok:false, code:'INVALID', message:'Organization name must be 100 characters or fewer.'};
+    if (source) {
+      try { var url = new URL(source); if (url.protocol !== 'https:' || url.username || url.password) throw new Error(); }
+      catch(e) { return {ok:false, code:'INVALID', message:'Use a complete HTTPS website address without embedded credentials.'}; }
+    }
+    if ((tag === 'Public notice' || tag === 'Donation link') && (!org || !source)) return {ok:false, code:'INVALID', message:'This category requires an organization/source name and an HTTPS source link.'};
+    return { ok: true, clean: { title: title, body: body, tag: tag, region: region, org: org, source: source } };
+  }
+
+  function createContentStore(auth, initialItems, onChange) {
+    var items = [];
+    var nextId = 1;
+    for (var i = 0; i < initialItems.length; i++) {
+      items.push(copyItem(initialItems[i]));
+      if (initialItems[i].id >= nextId) { nextId = initialItems[i].id + 1; }
+    }
+
+    function changed() {
+      if (onChange) { onChange(items.map(copyItem)); }
+    }
+    function findIndex(id) {
+      for (var k = 0; k < items.length; k++) {
+        if (items[k].id === id) { return k; }
+      }
+      return -1;
+    }
+    function unauthorized() {
+      return { ok: false, code: 'UNAUTHORIZED', message: 'Sign in as admin to change content.' };
+    }
+
+    return {
+      list: function () {
+        return items.map(copyItem);
+      },
+      add: function (fields) {
+        if (!auth.isAuthed()) { return unauthorized(); }
+        var check = validateContent(fields);
+        if (!check.ok) { return check; }
+        var item = {
+          id: nextId,
+          title: check.clean.title,
+          body: check.clean.body,
+          tag: check.clean.tag,
+          region: check.clean.region, org: check.clean.org, source: check.clean.source,
+          updated: new Date().toISOString()
+        };
+        nextId = nextId + 1;
+        items.unshift(item);
+        changed();
+        return { ok: true, code: 'OK', item: copyItem(item) };
+      },
+      edit: function (id, fields) {
+        if (!auth.isAuthed()) { return unauthorized(); }
+        var index = findIndex(id);
+        if (index === -1) {
+          return { ok: false, code: 'NOT_FOUND', message: 'That item no longer exists.' };
+        }
+        var check = validateContent(fields);
+        if (!check.ok) { return check; }
+        items[index].title = check.clean.title;
+        items[index].body = check.clean.body;
+        items[index].tag = check.clean.tag;
+        items[index].region = check.clean.region; items[index].org = check.clean.org; items[index].source = check.clean.source;
+        items[index].updated = new Date().toISOString();
+        changed();
+        return { ok: true, code: 'OK', item: copyItem(items[index]) };
+      },
+      remove: function (id) {
+        if (!auth.isAuthed()) { return unauthorized(); }
+        var index = findIndex(id);
+        if (index === -1) {
+          return { ok: false, code: 'NOT_FOUND', message: 'That item no longer exists.' };
+        }
+        items.splice(index, 1);
+        changed();
+        return { ok: true, code: 'OK' };
+      }
+    };
+  }
+
+  /* ---------- app state ---------- */
+
+  var auth = null;
+  var store = null;
+  var editingId = null;
+  var pendingDeleteId = null;
+  var loginNotice = '';
+
+  function loadSaved() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) { return null; }
+      var parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) { return null; }
+      var ids = new Set();
+      if (!parsed.every(function(item) {
+        if (!item || !Number.isSafeInteger(item.id) || item.id < 1 || ids.has(item.id)) return false;
+        ids.add(item.id);
+        return typeof item.title === 'string' && typeof item.body === 'string' &&
+          validateContent(Object.assign({}, item, {tag: (item.tag === 'Public notice' || item.tag === 'Donation link') && item.updated === null ? 'Background' : item.tag})).ok && (item.updated === null ||
+          (typeof item.updated === 'string' && !isNaN(Date.parse(item.updated))));
+      })) return null;
+      return parsed;
+    } catch (err) {
+      return null;
+    }
+  }
+  function saveItems(items) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(items)); } catch (err) { document.getElementById('storage-warning').hidden = false; }
+  }
+
+  var el = {
+    nav: document.getElementById('nav'),
+    cards: document.getElementById('cards'),
+    homeCount: document.getElementById('home-count'),
+    loginForm: document.getElementById('login-form'),
+    username: document.getElementById('username'),
+    password: document.getElementById('password'),
+    loginMsg: document.getElementById('login-msg'),
+    fillDemo: document.getElementById('fill-demo'),
+    who: document.getElementById('who'),
+    contentForm: document.getElementById('content-form'),
+    formTitle: document.getElementById('form-title'),
+    formSubmit: document.getElementById('form-submit'),
+    formCancel: document.getElementById('form-cancel'),
+    cTitle: document.getElementById('c-title'),
+    cBody: document.getElementById('c-body'),
+    cTag: document.getElementById('c-tag'),
+    adminMsg: document.getElementById('admin-msg'),
+    adminCount: document.getElementById('admin-count'),
+    items: document.getElementById('items'),
+    search: document.getElementById('search'),
+    region: document.getElementById('region'),
+    category: document.getElementById('category'),
+    cRegion: document.getElementById('c-region'),
+    cOrg: document.getElementById('c-org'),
+    cSource: document.getElementById('c-source')
+  };
+  var VIEWS = ['home', 'login', 'admin'];
+
+  function setMsg(node, text, kind) {
+    node.textContent = text;
+    node.setAttribute('data-kind', kind);
+  }
+
+  /* ---------- rendering ---------- */
+
+  function renderNav(view) {
+    var html = '';
+    html += '<a href="#home"' + (view === 'home' ? ' aria-current="page"' : '') + '>Home</a>';
+
+    if (auth.isAuthed()) {
+      html += '<a href="#admin"' + (view === 'admin' ? ' aria-current="page"' : '') + '>Dashboard</a>';
+      html += '<button type="button" class="btn quiet small" id="logout-btn">Log out</button>';
+    } else {
+      html += '<a href="#login"' + (view === 'login' ? ' aria-current="page"' : '') + '>Admin login</a>';
+    }
+    el.nav.innerHTML = html;
+  }
+
+  function filteredItems(list, query, region, category) {
+    var q = query.trim().toLowerCase();
+    return list.filter(function(item) {
+      return (!q || [item.title, item.body, item.org, item.region, item.tag].join(' ').toLowerCase().includes(q)) &&
+        (!region || item.region === region || (item.region === 'Nepal & Tibet' && region !== 'Nepal & Tibet')) && (!category || item.tag === category);
+    });
+  }
+  function sourceMarkup(item) {
+    if (!item.source) return '<span class="source-placeholder">Illustrative entry · No live source linked</span>';
+    return '<a class="source-link" href="' + escapeHtml(item.source) + '" target="_blank" rel="noopener noreferrer">' + (item.tag === 'Donation link' ? 'Visit external website' : 'View source') + ' ></a><span class="source-placeholder">Admin-provided link · Not independently verified</span>';
+  }
+  function renderHome() {
+    var all = store.list();
+    var list = filteredItems(all, el.search.value, el.region.value, el.category.value);
+    el.homeCount.textContent = list.length + ' of ' + all.length + ' entries';
+    if (list.length === 0) {
+      el.cards.innerHTML = '<div class="empty"><h3>No matching information</h3><p>Try a different keyword or clear the filters.</p></div>';
+      return;
+    }
+    el.cards.innerHTML = list.map(function(item) {
+      return '<article class="card"><div class="card-top"><span class="tag" data-tag="' + escapeHtml(item.tag) + '">' + escapeHtml(item.tag) + '</span><span class="sample-badge">DEMO</span></div><span class="region-label">' + escapeHtml(item.region) + '</span><h3>' + escapeHtml(item.title) + '</h3><p>' + escapeHtml(item.body) + '</p><div class="card-bottom"><span class="org-label">' + escapeHtml(item.org || 'Administrator entry') + '</span>' + sourceMarkup(item) + '<span class="meta">' + escapeHtml(formatDate(item.updated)) + '</span></div></article>';
+    }).join('');
+  }
+
+  function renderAdmin() {
+    var list = store.list();
+    el.who.textContent = auth.currentUser() || '';
+    el.adminCount.textContent = '(' + list.length + ')';
+    if (list.length === 0) {
+      el.items.innerHTML = '<div class="empty">Nothing here yet. Use the form to add your first item.</div>';
+      return;
+    }
+    var html = '';
+    for (var i = 0; i < list.length; i++) {
+      var item = list[i];
+      var actions = '';
+      if (pendingDeleteId === item.id) {
+        actions = '<button type="button" class="btn danger solid small" data-action="confirm" data-id="' + item.id + '">Confirm delete</button>' +
+                  '<button type="button" class="btn secondary small" data-action="cancel" data-id="' + item.id + '">Keep it</button>';
+      } else {
+        actions = '<button type="button" class="btn secondary small" data-action="edit" data-id="' + item.id + '">Edit</button>' +
+                  '<button type="button" class="btn danger small" data-action="delete" data-id="' + item.id + '">Delete</button>';
+      }
+      html += '<div class="item">' +
+        '<span class="tag" data-tag="' + escapeHtml(item.tag) + '">' + escapeHtml(item.tag) + '</span>' +
+        '<span class="hint">' + escapeHtml(item.region) + ' · ' + escapeHtml(item.org || 'Administrator entry') + '</span>' +
+        '<h3>' + escapeHtml(item.title) + '</h3>' +
+        '<p>' + escapeHtml(item.body) + '</p>' +
+        '<div class="row">' + actions + '</div>' +
+        '</div>';
+    }
+    el.items.innerHTML = html;
+  }
+
+  function resetForm() {
+    editingId = null;
+    el.contentForm.reset();
+    el.formTitle.textContent = 'Add content';
+    el.formSubmit.textContent = 'Add content';
+    el.formCancel.hidden = true;
+  }
+
+  function showView(view) {
+    for (var i = 0; i < VIEWS.length; i++) {
+      document.getElementById('view-' + VIEWS[i]).hidden = (VIEWS[i] !== view);
+    }
+  }
+
+
+
+  function route() {
+    var name = location.hash.replace('#', '');
+    var view = resolveRoute(name, auth.isAuthed());
+
+    if (name === 'admin' && view === 'login') {
+      loginNotice = 'Sign in to open the dashboard.';
+    }
+    showView(view);
+    renderNav(view);
+
+    if (view === 'home') { renderHome(); }
+    if (view === 'login') {
+      if (loginNotice !== '') {
+        setMsg(el.loginMsg, loginNotice, 'info');
+        loginNotice = '';
+      }
+    }
+    if (view === 'admin') { renderAdmin(); }
+
+  }
+
+  /* ---------- events ---------- */
+
+  el.nav.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'logout-btn') {
+      auth.logout();
+      resetForm();
+      pendingDeleteId = null;
+      setMsg(el.loginMsg, 'You have been signed out.', 'info');
+      location.hash = 'home';
+      route();
+    }
+  });
+
+  el.fillDemo.addEventListener('click', function () {
+    el.username.value = DEMO.username;
+    el.password.value = DEMO.password;
+    el.password.focus();
+  });
+
+  el.loginForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var submit = document.getElementById('login-submit');
+    if (submit.disabled) return;
+    submit.disabled = true;
+    var result = await auth.login(el.username.value, el.password.value);
+    submit.disabled = false;
+    el.password.value = '';
+    if (result.ok) {
+      setMsg(el.loginMsg, '', 'info');
+      el.username.value = '';
+      location.hash = 'admin';
+      route();
+      return;
+    }
+    setMsg(el.loginMsg, result.message, 'bad');
+  });
+
+  el.contentForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fields = { title: el.cTitle.value, body: el.cBody.value, tag: el.cTag.value, region: el.cRegion.value, org: el.cOrg.value, source: el.cSource.value };
+    var result;
+    var wasEditing = (editingId !== null);
+    if (wasEditing) {
+      result = store.edit(editingId, fields);
+    } else {
+      result = store.add(fields);
+    }
+    if (!result.ok) {
+      setMsg(el.adminMsg, result.message, 'bad');
+      return;
+    }
+    if (wasEditing) {
+      setMsg(el.adminMsg, 'Saved changes to "' + result.item.title + '".', 'good');
+    } else {
+      setMsg(el.adminMsg, 'Added "' + result.item.title + '" to the relief hub.', 'good');
+    }
+    resetForm();
+    renderAdmin();
+  });
+
+  el.formCancel.addEventListener('click', function () {
+    resetForm();
+    setMsg(el.adminMsg, 'Edit cancelled.', 'info');
+  });
+
+  el.items.addEventListener('click', function (e) {
+    var button = e.target.closest('button[data-action]');
+    if (!button) { return; }
+    var action = button.getAttribute('data-action');
+    var id = Number(button.getAttribute('data-id'));
+    var list = store.list();
+    var target = null;
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].id === id) { target = list[i]; }
+    }
+
+    if (action === 'edit' && target) {
+      editingId = id;
+      pendingDeleteId = null;
+      el.cTitle.value = target.title;
+      el.cBody.value = target.body;
+      el.cTag.value = target.tag;
+      el.cRegion.value = target.region; el.cOrg.value = target.org; el.cSource.value = target.source;
+      el.formTitle.textContent = 'Edit content';
+      el.formSubmit.textContent = 'Save changes';
+      el.formCancel.hidden = false;
+      setMsg(el.adminMsg, 'Editing "' + target.title + '".', 'info');
+      el.cTitle.focus();
+      renderAdmin();
+    } else if (action === 'delete') {
+      pendingDeleteId = id;
+      renderAdmin();
+    } else if (action === 'cancel') {
+      pendingDeleteId = null;
+      renderAdmin();
+    } else if (action === 'confirm') {
+      var result = store.remove(id);
+      pendingDeleteId = null;
+      if (result.ok) {
+        if (editingId === id) { resetForm(); }
+        setMsg(el.adminMsg, 'Deleted "' + (target ? target.title : 'item') + '".', 'good');
+      } else {
+        setMsg(el.adminMsg, result.message, 'bad');
+      }
+      renderAdmin();
+    }
+  });
+
+  window.addEventListener('hashchange', route);
+  el.search.addEventListener('input', renderHome);
+  el.region.addEventListener('change', renderHome);
+  el.category.addEventListener('change', renderHome);
+  document.getElementById('clear-filters').addEventListener('click', function() {
+    el.search.value = ''; el.region.value = ''; el.category.value = ''; renderHome();
+  });
+  document.querySelectorAll('[data-filter]').forEach(function(button) {
+    button.addEventListener('click', function() {
+      el.category.value = button.dataset.filter; el.search.value = ''; el.region.value = '';
+      location.hash = 'browse'; renderHome(); document.getElementById('browse').scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  /* ---------- start ---------- */
+
+  async function start() {
+    var users = [{ username: DEMO.username, hash: await hashPassword(DEMO.password) }];
+    auth = createAuth(users, { maxAttempts: 3, lockMs: 30000, now: function () { return Date.now(); } });
+    var saved = loadSaved();
+    var startItems = SEED;
+    if (saved !== null) { startItems = saved; }
+    store = createContentStore(auth, startItems, saveItems);
+    route();
+  }
+
+  start().catch(function () { document.getElementById('cards').textContent = 'Unable to start. Please reload this page.'; });
+})();
+</script>
+
+</body></html>
+</body></html>
